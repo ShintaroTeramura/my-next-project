@@ -1,15 +1,16 @@
 import Image from "next/image";
-import { News } from "@/app/_libs/microcms";
-import styles from "../Date/index.module.css";
+import styles from "./index.module.css";
+import { formatDate } from "@/app/_libs/utils";
 
 type Props = {
   date: string;
 };
-export default function Category({ date }: Props) {
+
+export default function Date({ date }: Props) {
   return (
-    <span className={styles.data}>
-      <Image src="/clock.svg" alt="" width={16} height={16} priority />
-      {date}
+    <span className={styles.date}>
+      <Image src="/clock.svg" alt="" width={16} height={16} loading="eager" />
+      {formatDate(date)}
     </span>
   );
 }
