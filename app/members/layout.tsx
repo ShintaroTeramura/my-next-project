@@ -1,16 +1,21 @@
-import Sheet from "@/app/_components/Sheet"
-import Hero from "@/app/_components/Hero";
+import { GoogleAnalytics } from '@next/third-parties/google';
+import Sheet from '@/app/_components/Sheet';
+import Hero from '@/app/_components/Hero';
 
-type Prop={
-    children : React.ReactNode ;
-}
-export default function RootLayout({children}: Prop){
-    return (
-        <>
-        <Hero title="members" sub="メンバー"/>
-        <Sheet>{children}</Sheet>
-        
-        </>
-    );
-    
+export const metadata = {
+  title: 'メンバー',
+};
+
+type Props = {
+  children: React.ReactNode;
+};
+
+export default function RootLayout({ children }: Props) {
+  return (
+    <>
+      <Hero title="Members" sub="メンバー" />
+      <Sheet>{children}</Sheet>
+      <GoogleAnalytics gaId="G-XXX" />
+    </>
+  );
 }

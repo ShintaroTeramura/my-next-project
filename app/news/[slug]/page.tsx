@@ -1,9 +1,9 @@
-import { notFound } from "next/navigation";
-import type { Metadata } from "next";
-import { getNewsDetail } from "@/app/_libs/microcms";
-import Article from "@/app/_components/Article";
-import ButtonLink from "@/app/_components/ButtonLink";
-import styles from "./page.module.css";
+import { notFound } from 'next/navigation';
+import type { Metadata } from 'next';
+import { getNewsDetail } from '@/app/_libs/microcms';
+import Article from '@/app/_components/Article';
+import ButtonLink from '@/app/_components/ButtonLink';
+import styles from './page.module.css';
 
 type Props = {
   params: {
@@ -28,7 +28,7 @@ export async function generateMetadata({
     openGraph: {
       title: data.title,
       description: data.description,
-      images: [data?.thumbnail?.url ?? ""],
+      images: [data?.thumbnail?.url ?? ''],
     },
   };
 }
